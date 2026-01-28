@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rewarded Video View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="RewardedVideoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RewardedVideoViewController" customModule="BlueStackDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZ0-6B-WLj">
+                                <rect key="frame" x="0.0" y="40" width="393" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-yf-bNV">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIw-sJ-Xmf" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="rIw-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Load Rewarded Ad">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loadRewardedAdButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qib-2Z-Ppi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-yQ-O9U" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="vLA-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Show Rewarded Ad">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showRewardedAdButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6hr-L6-elb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DKT-yf-bNV" secondAttribute="trailing" constant="20" id="87e-eS-eaf"/>
+                                    <constraint firstAttribute="bottom" secondItem="DKT-yf-bNV" secondAttribute="bottom" id="CJT-Kq-HEp"/>
+                                    <constraint firstItem="DKT-yf-bNV" firstAttribute="leading" secondItem="YZ0-6B-WLj" secondAttribute="leading" constant="20" id="JHa-Ud-OKA"/>
+                                    <constraint firstItem="DKT-yf-bNV" firstAttribute="top" secondItem="YZ0-6B-WLj" secondAttribute="top" id="gtI-BD-tQw"/>
+                                    <constraint firstAttribute="height" constant="45" id="zDZ-tT-nPu"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-reward-01">
+                                <rect key="frame" x="0.0" y="105" width="393" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="hdr-reward-01">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_hero" translatesAutoresizingMaskIntoConstraints="NO" id="img-hdr-reward-01">
+                                            <rect key="frame" x="0.0" y="10" width="393" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="img-hdr-reward-01" secondAttribute="bottom" constant="10" id="hdr-reward-bot"/>
+                                        <constraint firstItem="img-hdr-reward-01" firstAttribute="leading" secondItem="hdr-reward-01" secondAttribute="leading" id="hdr-reward-lead"/>
+                                        <constraint firstItem="img-hdr-reward-01" firstAttribute="top" secondItem="hdr-reward-01" secondAttribute="top" constant="10" id="hdr-reward-top"/>
+                                        <constraint firstAttribute="trailing" secondItem="img-hdr-reward-01" secondAttribute="trailing" id="hdr-reward-trail"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" rowHeight="120" id="cell-reward-01">
+                                        <rect key="frame" x="0.0" y="270" width="393" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-reward-01" id="cell-content-reward-01">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_right" translatesAutoresizingMaskIntoConstraints="NO" id="img-cell-reward-01">
+                                                    <rect key="frame" x="0.0" y="10" width="393" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="img-cell-reward-01" secondAttribute="bottom" constant="10" id="cell-reward-bot"/>
+                                                <constraint firstItem="img-cell-reward-01" firstAttribute="leading" secondItem="cell-content-reward-01" secondAttribute="leading" id="cell-reward-lead"/>
+                                                <constraint firstItem="img-cell-reward-01" firstAttribute="top" secondItem="cell-content-reward-01" secondAttribute="top" constant="10" id="cell-reward-top"/>
+                                                <constraint firstAttribute="trailing" secondItem="img-cell-reward-01" secondAttribute="trailing" id="cell-reward-trail"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="krj-V9-9b2"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="reward-del-connection"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="225-xZ-rjx"/>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="40" id="MNI-nO-HsG"/>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WMD-lA-xpg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tbl-reward-01" secondAttribute="bottom" constant="10" id="bVl-h2-lm5"/>
+                            <constraint firstItem="tbl-reward-01" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tbl-reward-lead"/>
+                            <constraint firstItem="tbl-reward-01" firstAttribute="top" secondItem="YZ0-6B-WLj" secondAttribute="bottom" constant="20" id="tbl-reward-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tbl-reward-01" secondAttribute="trailing" id="tbl-reward-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadRewardedAdButton" destination="rIw-sJ-Xmf" id="Lgm-7Q-CEx"/>
+                        <outlet property="showRewardedButton" destination="vLA-yQ-O9U" id="Go1-Yw-1Jx"/>
+                        <outlet property="tableView" destination="tbl-reward-01" id="tbl-reward-outlet-01"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="content_hero" width="360" height="190"/>
+        <image name="content_right" width="360" height="132"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

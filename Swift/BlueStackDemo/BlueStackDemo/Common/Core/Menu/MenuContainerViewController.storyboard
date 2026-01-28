@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu Container View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MenuContainerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MenuContainerViewController" customModule="BlueStackDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-v8-PjQ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7j2-k2-KC8">
+                                        <rect key="frame" x="15" y="38" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="hl4-c6-fAk"/>
+                                            <constraint firstAttribute="width" constant="44" id="x0T-7U-SdS"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title=""/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c7x-Si-raC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-IB-REi">
+                                        <rect key="frame" x="171" y="48" width="51" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7j2-k2-KC8" firstAttribute="centerY" secondItem="XC3-v8-PjQ" secondAttribute="centerY" constant="15" id="3xB-rh-au7"/>
+                                    <constraint firstItem="7j2-k2-KC8" firstAttribute="leading" secondItem="XC3-v8-PjQ" secondAttribute="leading" constant="15" id="WUk-RV-tIn"/>
+                                    <constraint firstAttribute="height" constant="90" id="i6j-Bv-p2G"/>
+                                    <constraint firstItem="RLV-IB-REi" firstAttribute="centerX" secondItem="XC3-v8-PjQ" secondAttribute="centerX" id="pFm-Ho-3dm"/>
+                                    <constraint firstItem="RLV-IB-REi" firstAttribute="centerY" secondItem="7j2-k2-KC8" secondAttribute="centerY" id="vAK-x3-a9o"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-v8-PjQ" customClass="BannerView" customModule="BlueStackSDK">
+                                <rect key="frame" x="0.0" y="784" width="393" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BNR-v8-PjQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0TW-pU-yym"/>
+                            <constraint firstItem="XC3-v8-PjQ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4gP-iM-1VJ"/>
+                            <constraint firstItem="BNR-v8-PjQ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="BNR-bottom"/>
+                            <constraint firstItem="XC3-v8-PjQ" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="FQx-PT-sY9"/>
+                            <constraint firstItem="XC3-v8-PjQ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="S50-Yk-uQb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="BNR-v8-PjQ" id="BNR-outlet"/>
+                        <outlet property="menuButton" destination="7j2-k2-KC8" id="hWc-i0-T9R"/>
+                        <outlet property="navigationBarView" destination="XC3-v8-PjQ" id="Vk2-x1-NEI"/>
+                        <outlet property="titleLabel" destination="RLV-IB-REi" id="Vbq-6g-yk6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

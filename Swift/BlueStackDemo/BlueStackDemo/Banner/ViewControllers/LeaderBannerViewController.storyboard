@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LeaderBannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LeaderBannerViewController" customModule="BlueStackDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZ0-6B-WLj">
+                                <rect key="frame" x="0.0" y="40" width="393" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-yf-bNV">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIw-sJ-Xmf" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="rIw-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Hide">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hideButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hide-action"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-yQ-O9U" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="vLA-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Show">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="show-action"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DKT-yf-bNV" secondAttribute="trailing" constant="20" id="87e-eS-eaf"/>
+                                    <constraint firstAttribute="bottom" secondItem="DKT-yf-bNV" secondAttribute="bottom" id="CJT-Kq-HEp"/>
+                                    <constraint firstItem="DKT-yf-bNV" firstAttribute="leading" secondItem="YZ0-6B-WLj" secondAttribute="leading" constant="20" id="JHa-Ud-OKA"/>
+                                    <constraint firstItem="DKT-yf-bNV" firstAttribute="top" secondItem="YZ0-6B-WLj" secondAttribute="top" id="gtI-BD-tQw"/>
+                                    <constraint firstAttribute="height" constant="45" id="zDZ-tT-nPu"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-leader-01">
+                                <rect key="frame" x="0.0" y="105" width="393" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="hdr-leader-01">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_hero" translatesAutoresizingMaskIntoConstraints="NO" id="img-hdr-leader-01">
+                                            <rect key="frame" x="0.0" y="10" width="393" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="img-hdr-leader-01" secondAttribute="bottom" constant="10" id="hdr-leader-bot"/>
+                                        <constraint firstItem="img-hdr-leader-01" firstAttribute="leading" secondItem="hdr-leader-01" secondAttribute="leading" id="hdr-leader-lead"/>
+                                        <constraint firstItem="img-hdr-leader-01" firstAttribute="top" secondItem="hdr-leader-01" secondAttribute="top" constant="10" id="hdr-leader-top"/>
+                                        <constraint firstAttribute="trailing" secondItem="img-hdr-leader-01" secondAttribute="trailing" id="hdr-leader-trail"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" rowHeight="120" id="cell-content-leader">
+                                        <rect key="frame" x="0.0" y="270" width="393" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-content-leader" id="cell-content-view-leader">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_right" translatesAutoresizingMaskIntoConstraints="NO" id="img-cell-leader">
+                                                    <rect key="frame" x="0.0" y="10" width="393" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="img-cell-leader" secondAttribute="bottom" constant="10" id="cell-leader-bot"/>
+                                                <constraint firstItem="img-cell-leader" firstAttribute="leading" secondItem="cell-content-view-leader" secondAttribute="leading" id="cell-leader-lead"/>
+                                                <constraint firstItem="img-cell-leader" firstAttribute="top" secondItem="cell-content-view-leader" secondAttribute="top" constant="10" id="cell-leader-top"/>
+                                                <constraint firstAttribute="trailing" secondItem="img-cell-leader" secondAttribute="trailing" id="cell-leader-trail"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderBannerAdCell" rowHeight="130" id="cell-ad-leader">
+                                        <rect key="frame" x="0.0" y="390" width="393" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-ad-leader" id="cell-ad-view-leader">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" tag="100" translatesAutoresizingMaskIntoConstraints="NO" id="ad-container-leader">
+                                                    <rect key="frame" x="16" y="10" width="361" height="110"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="ad-height-leader"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ad-container-leader" secondAttribute="bottom" constant="10" id="ad-bot-leader"/>
+                                                <constraint firstItem="ad-container-leader" firstAttribute="leading" secondItem="cell-ad-view-leader" secondAttribute="leading" constant="16" id="ad-lead-leader"/>
+                                                <constraint firstItem="ad-container-leader" firstAttribute="top" secondItem="cell-ad-view-leader" secondAttribute="top" constant="10" id="ad-top-leader"/>
+                                                <constraint firstAttribute="trailing" secondItem="ad-container-leader" secondAttribute="trailing" constant="16" id="ad-trail-leader"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="leader-ds-connection"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="leader-del-connection"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="225-xZ-rjx"/>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="40" id="MNI-nO-HsG"/>
+                            <constraint firstItem="YZ0-6B-WLj" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WMD-lA-xpg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tbl-leader-01" secondAttribute="bottom" id="tbl-leader-bot"/>
+                            <constraint firstItem="tbl-leader-01" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tbl-leader-lead"/>
+                            <constraint firstItem="tbl-leader-01" firstAttribute="top" secondItem="YZ0-6B-WLj" secondAttribute="bottom" constant="20" id="tbl-leader-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tbl-leader-01" secondAttribute="trailing" id="tbl-leader-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hideButton" destination="rIw-sJ-Xmf" id="hide-outlet"/>
+                        <outlet property="showButton" destination="vLA-yQ-O9U" id="show-outlet"/>
+                        <outlet property="tableView" destination="tbl-leader-01" id="tbl-leader-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="content_hero" width="360" height="190"/>
+        <image name="content_right" width="320" height="117.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

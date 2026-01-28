@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="iPad13_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Standard Banner View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StandardBannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="StandardBannerViewController" customModule="BlueStackDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="button-container">
+                                <rect key="frame" x="0.0" y="40" width="1032" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="load-button" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="323.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="load-height"/>
+                                        </constraints>
+                                        <state key="normal" title="Load">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loadButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="load-action"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hide-button" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                        <rect key="frame" x="354.5" y="0.0" width="323" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="hide-height"/>
+                                        </constraints>
+                                        <state key="normal" title="Hide">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="hideButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mna-Q4-JZf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="show-button" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                        <rect key="frame" x="688.5" y="0.0" width="323.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="show-height"/>
+                                        </constraints>
+                                        <state key="normal" title="Show">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wwx-41-X87"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toggle-refresh-button" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="65" width="489.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="toggle-height"/>
+                                        </constraints>
+                                        <state key="normal" title="Toggle Refresh">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toggleRefreshButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="toggle-action"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="remove-button" customClass="GradientButton" customModule="BlueStackDemo" customModuleProvider="target">
+                                        <rect key="frame" x="522.5" y="65" width="489.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="remove-height"/>
+                                        </constraints>
+                                        <state key="normal" title="Remove">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="removeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="remove-action"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="container-height"/>
+                                    <constraint firstItem="hide-button" firstAttribute="centerY" secondItem="load-button" secondAttribute="centerY" id="hide-centerY"/>
+                                    <constraint firstItem="hide-button" firstAttribute="leading" secondItem="load-button" secondAttribute="trailing" constant="11" id="hide-leading"/>
+                                    <constraint firstItem="hide-button" firstAttribute="width" secondItem="load-button" secondAttribute="width" id="hide-width-equal"/>
+                                    <constraint firstItem="load-button" firstAttribute="leading" secondItem="button-container" secondAttribute="leading" constant="20" id="load-leading"/>
+                                    <constraint firstItem="load-button" firstAttribute="top" secondItem="button-container" secondAttribute="top" id="load-top"/>
+                                    <constraint firstItem="remove-button" firstAttribute="centerY" secondItem="toggle-refresh-button" secondAttribute="centerY" id="remove-centerY"/>
+                                    <constraint firstItem="remove-button" firstAttribute="leading" secondItem="toggle-refresh-button" secondAttribute="trailing" constant="13" id="remove-leading"/>
+                                    <constraint firstAttribute="trailing" secondItem="remove-button" secondAttribute="trailing" constant="20" id="remove-trailing"/>
+                                    <constraint firstItem="remove-button" firstAttribute="width" secondItem="toggle-refresh-button" secondAttribute="width" id="remove-width-equal"/>
+                                    <constraint firstItem="show-button" firstAttribute="centerY" secondItem="load-button" secondAttribute="centerY" id="show-centerY"/>
+                                    <constraint firstItem="show-button" firstAttribute="leading" secondItem="hide-button" secondAttribute="trailing" constant="11" id="show-leading"/>
+                                    <constraint firstAttribute="trailing" secondItem="show-button" secondAttribute="trailing" constant="20" id="show-trailing"/>
+                                    <constraint firstItem="show-button" firstAttribute="width" secondItem="load-button" secondAttribute="width" id="show-width-equal"/>
+                                    <constraint firstItem="toggle-refresh-button" firstAttribute="leading" secondItem="button-container" secondAttribute="leading" constant="20" id="toggle-leading"/>
+                                    <constraint firstItem="toggle-refresh-button" firstAttribute="top" secondItem="load-button" secondAttribute="bottom" constant="20" id="toggle-top"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-standard-01">
+                                <rect key="frame" x="0.0" y="170" width="1032" height="1161"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="hdr-standard-01">
+                                    <rect key="frame" x="0.0" y="0.0" width="1032" height="220"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_hero" translatesAutoresizingMaskIntoConstraints="NO" id="img-hdr-standard-01">
+                                            <rect key="frame" x="0.0" y="10" width="1032" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="img-hdr-standard-01" secondAttribute="bottom" constant="10" id="hdr-standard-bot"/>
+                                        <constraint firstItem="img-hdr-standard-01" firstAttribute="leading" secondItem="hdr-standard-01" secondAttribute="leading" id="hdr-standard-lead"/>
+                                        <constraint firstItem="img-hdr-standard-01" firstAttribute="top" secondItem="hdr-standard-01" secondAttribute="top" constant="10" id="hdr-standard-top"/>
+                                        <constraint firstAttribute="trailing" secondItem="img-hdr-standard-01" secondAttribute="trailing" id="hdr-standard-trail"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" rowHeight="120" id="cell-content-standard">
+                                        <rect key="frame" x="0.0" y="270" width="1032" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-content-standard" id="cell-content-view-standard">
+                                            <rect key="frame" x="0.0" y="0.0" width="1032" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_right" translatesAutoresizingMaskIntoConstraints="NO" id="img-cell-standard">
+                                                    <rect key="frame" x="0.0" y="10" width="1032" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="img-cell-standard" secondAttribute="bottom" constant="10" id="cell-standard-bot"/>
+                                                <constraint firstItem="img-cell-standard" firstAttribute="leading" secondItem="cell-content-view-standard" secondAttribute="leading" id="cell-standard-lead"/>
+                                                <constraint firstItem="img-cell-standard" firstAttribute="top" secondItem="cell-content-view-standard" secondAttribute="top" constant="10" id="cell-standard-top"/>
+                                                <constraint firstAttribute="trailing" secondItem="img-cell-standard" secondAttribute="trailing" id="cell-standard-trail"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandardBannerAdCell" rowHeight="90" id="cell-ad-standard">
+                                        <rect key="frame" x="0.0" y="390" width="1032" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-ad-standard" id="cell-ad-view-standard">
+                                            <rect key="frame" x="0.0" y="0.0" width="1032" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad-container-standard">
+                                                    <rect key="frame" x="16" y="10" width="1000" height="70"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="ad-height-standard"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ad-container-standard" secondAttribute="bottom" constant="10" id="ad-bot-standard"/>
+                                                <constraint firstItem="ad-container-standard" firstAttribute="leading" secondItem="cell-ad-view-standard" secondAttribute="leading" constant="16" id="ad-lead-standard"/>
+                                                <constraint firstItem="ad-container-standard" firstAttribute="top" secondItem="cell-ad-view-standard" secondAttribute="top" constant="10" id="ad-top-standard"/>
+                                                <constraint firstAttribute="trailing" secondItem="ad-container-standard" secondAttribute="trailing" constant="16" id="ad-trail-standard"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="standard-ds-connection"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="standard-del-connection"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="button-container" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="btn-container-leading"/>
+                            <constraint firstItem="button-container" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="40" id="btn-container-top"/>
+                            <constraint firstItem="button-container" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="btn-container-trailing"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tbl-standard-01" secondAttribute="bottom" id="tbl-standard-bot"/>
+                            <constraint firstItem="tbl-standard-01" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tbl-standard-lead"/>
+                            <constraint firstItem="tbl-standard-01" firstAttribute="top" secondItem="button-container" secondAttribute="bottom" constant="20" id="tbl-standard-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tbl-standard-01" secondAttribute="trailing" id="tbl-standard-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hideButton" destination="hide-button" id="hide-outlet"/>
+                        <outlet property="loadButton" destination="load-button" id="load-outlet"/>
+                        <outlet property="removeButton" destination="remove-button" id="remove-outlet"/>
+                        <outlet property="showButton" destination="show-button" id="show-outlet"/>
+                        <outlet property="tableView" destination="tbl-standard-01" id="tbl-standard-outlet"/>
+                        <outlet property="toggleRefreshButton" destination="toggle-refresh-button" id="toggle-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="content_hero" width="360" height="190"/>
+        <image name="content_right" width="360" height="132"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

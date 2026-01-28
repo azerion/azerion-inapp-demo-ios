@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="BlueStackDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tab-container">
+                                <rect key="frame" x="0.0" y="118" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-standard">
+                                        <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="STANDARD">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tab-standard-action"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-full">
+                                        <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="FULL">
+                                            <color key="titleColor" systemColor="systemGrayColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tab-full-action"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-large">
+                                        <rect key="frame" x="196.66666666666666" y="0.0" width="97.999999999999972" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="LARGE">
+                                            <color key="titleColor" systemColor="systemGrayColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tab-large-action"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-leader">
+                                        <rect key="frame" x="294.66666666666669" y="0.0" width="98.333333333333314" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="LEADER">
+                                            <color key="titleColor" systemColor="systemGrayColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tab-leader-action"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tab-indicator">
+                                        <rect key="frame" x="0.0" y="47" width="98.333333333333329" height="3"/>
+                                        <color key="backgroundColor" red="0.45882352941176469" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="indicator-height"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tab-indicator" secondAttribute="bottom" id="indicator-bot"/>
+                                    <constraint firstItem="tab-indicator" firstAttribute="leading" secondItem="tab-standard" secondAttribute="leading" id="indicator-lead"/>
+                                    <constraint firstItem="tab-indicator" firstAttribute="width" secondItem="tab-standard" secondAttribute="width" id="indicator-width"/>
+                                    <constraint firstAttribute="height" constant="50" id="tab-container-height"/>
+                                    <constraint firstItem="tab-standard" firstAttribute="bottom" secondItem="tab-container" secondAttribute="bottom" constant="-3" id="tab1-bot"/>
+                                    <constraint firstItem="tab-standard" firstAttribute="leading" secondItem="tab-container" secondAttribute="leading" id="tab1-lead"/>
+                                    <constraint firstItem="tab-standard" firstAttribute="top" secondItem="tab-container" secondAttribute="top" id="tab1-top"/>
+                                    <constraint firstItem="tab-full" firstAttribute="bottom" secondItem="tab-container" secondAttribute="bottom" constant="-3" id="tab2-bot"/>
+                                    <constraint firstItem="tab-full" firstAttribute="leading" secondItem="tab-standard" secondAttribute="trailing" id="tab2-lead"/>
+                                    <constraint firstItem="tab-full" firstAttribute="top" secondItem="tab-container" secondAttribute="top" id="tab2-top"/>
+                                    <constraint firstItem="tab-full" firstAttribute="width" secondItem="tab-standard" secondAttribute="width" id="tab2-width"/>
+                                    <constraint firstItem="tab-large" firstAttribute="bottom" secondItem="tab-container" secondAttribute="bottom" constant="-3" id="tab3-bot"/>
+                                    <constraint firstItem="tab-large" firstAttribute="leading" secondItem="tab-full" secondAttribute="trailing" id="tab3-lead"/>
+                                    <constraint firstItem="tab-large" firstAttribute="top" secondItem="tab-container" secondAttribute="top" id="tab3-top"/>
+                                    <constraint firstItem="tab-large" firstAttribute="width" secondItem="tab-standard" secondAttribute="width" id="tab3-width"/>
+                                    <constraint firstItem="tab-leader" firstAttribute="bottom" secondItem="tab-container" secondAttribute="bottom" constant="-3" id="tab4-bot"/>
+                                    <constraint firstItem="tab-leader" firstAttribute="leading" secondItem="tab-large" secondAttribute="trailing" id="tab4-lead"/>
+                                    <constraint firstItem="tab-leader" firstAttribute="top" secondItem="tab-container" secondAttribute="top" id="tab4-top"/>
+                                    <constraint firstAttribute="trailing" secondItem="tab-leader" secondAttribute="trailing" id="tab4-trail"/>
+                                    <constraint firstItem="tab-leader" firstAttribute="width" secondItem="tab-standard" secondAttribute="width" id="tab4-width"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator">
+                                <rect key="frame" x="0.0" y="168" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="separator-height"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="content-container">
+                                <rect key="frame" x="0.0" y="169" width="393" height="615"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="page-container">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="615"/>
+                                        <connections>
+                                            <segue destination="page-view-controller" kind="embed" identifier="embedPageViewController" id="embed-segue"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="page-container" secondAttribute="bottom" id="page-bot"/>
+                                    <constraint firstItem="page-container" firstAttribute="leading" secondItem="content-container" secondAttribute="leading" id="page-lead"/>
+                                    <constraint firstItem="page-container" firstAttribute="top" secondItem="content-container" secondAttribute="top" id="page-top"/>
+                                    <constraint firstAttribute="trailing" secondItem="page-container" secondAttribute="trailing" id="page-trail"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="content-container" secondAttribute="bottom" id="Mwn-05-dau"/>
+                            <constraint firstItem="content-container" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="content-lead"/>
+                            <constraint firstItem="content-container" firstAttribute="top" secondItem="separator" secondAttribute="bottom" id="content-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="content-container" secondAttribute="trailing" id="content-trail"/>
+                            <constraint firstItem="separator" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sep-lead"/>
+                            <constraint firstItem="separator" firstAttribute="top" secondItem="tab-container" secondAttribute="bottom" id="sep-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="separator" secondAttribute="trailing" id="sep-trail"/>
+                            <constraint firstItem="tab-container" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tab-lead"/>
+                            <constraint firstItem="tab-container" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tab-top"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tab-container" secondAttribute="trailing" id="tab-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentContainer" destination="content-container" id="content-outlet"/>
+                        <outlet property="tabIndicator" destination="tab-indicator" id="indicator-outlet"/>
+                        <outlet property="tabIndicatorLeadingConstraint" destination="indicator-lead" id="indicator-lead-outlet"/>
+                        <outlet property="tabIndicatorWidthConstraint" destination="indicator-width" id="indicator-width-outlet"/>
+                        <outletCollection property="tabButtons" destination="tab-standard" collectionClass="NSMutableArray" id="tab1-outlet"/>
+                        <outletCollection property="tabButtons" destination="tab-full" collectionClass="NSMutableArray" id="tab2-outlet"/>
+                        <outletCollection property="tabButtons" destination="tab-large" collectionClass="NSMutableArray" id="tab3-outlet"/>
+                        <outletCollection property="tabButtons" destination="tab-leader" collectionClass="NSMutableArray" id="tab4-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.57746478873241" y="-28.244274809160306"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="page-scene">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="page-view-controller" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="page-first-responder" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
