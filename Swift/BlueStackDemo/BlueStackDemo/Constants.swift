@@ -9,5 +9,6 @@ struct Constants {
         static let rewarded = "/\(appID)/rewarded"
         static let mrec = "/\(appID)/mrec"
         static let banner = "/\(appID)/banner"
+        static let appOpen = "/\(appID)/appopen"
     }
 }
