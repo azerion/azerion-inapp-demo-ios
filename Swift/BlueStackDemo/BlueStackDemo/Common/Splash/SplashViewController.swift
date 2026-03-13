@@ -10,8 +10,15 @@ class SplashViewController: UIViewController {
     private var cmpManager: CMPManager?
     private var cmpFactory: CMPManagerFactory = CMPManagerFactory()
     
+    /// Number of seconds remaining to show the app open ad.
+    /// This simulates the time needed to load the app.
+    var secondsRemaining: Int = 5
+    /// The countdown timer.
+    var countdownTimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppOpenAdManager.shared.appOpenAdManagerDelegate = self
         navigationController?.setNavigationBarHidden(true, animated: false)
         requestAppTracking()
     }
@@ -45,7 +52,13 @@ class SplashViewController: UIViewController {
         self.cmpManager?.start(with: self)
         
         if self.cmpManager?.hasConsent == true {
+            self.startTimer()
             self.startInitializingBlueStackSDK()
+        }
+        
+        if self.secondsRemaining <= 0 {
+            AppOpenAdManager.shared.appOpenAdManagerDelegate = nil
+            self.onInitializationComplete?()
         }
     }
     
@@ -54,15 +67,35 @@ class SplashViewController: UIViewController {
     /// 1. ATT permission has been requested (iOS 14+)
     /// 2. CMP consent has been obtained or CMP has failed
     private func startInitializingBlueStackSDK() {
-        BlueStack.sharedInstance().setDebugMode(enabled: true)
-        BlueStack.sharedInstance().initialize(appID: Constants.appID) { initializationStatus in
+        MobileAds.sharedInstance().setDebugMode(enabled: true)
+        MobileAds.sharedInstance().initialize(appID: Constants.appID) { initializationStatus in
             for ( _ , adapterStatus) in initializationStatus.adapterStatuses {
                 Logger.debug("adapter name \(adapterStatus.name) has this state \(adapterStatus.state) with Description \(String(describing: adapterStatus.statusDescription))")
-            }
-            DispatchQueue.main.async {
-                self.onInitializationComplete?()
+                DispatchQueue.main.async {
+                   AppOpenAdManager.shared.loadAppOpenAd()
+                }
             }
         }
+    }
+    
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(SplashViewController.decrementCounter),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    @objc func decrementCounter() {
+        secondsRemaining -= 1
+        guard secondsRemaining <= 0 else {
+            return
+        }
+        
+        countdownTimer?.invalidate()
+        
+        AppOpenAdManager.shared.showAppOpenAdIfAvailable()
     }
 }
 
@@ -72,14 +105,26 @@ extension SplashViewController: CMPManagerDelegate {
     }
     
     func onConsentStringDidChange(consentManager: CMPManager, consentString: String) {
+        self.startTimer()
         self.startInitializingBlueStackSDK()
     }
     
     func onConsentManagerDidFail(consentManager: CMPManager, error: Error) {
+        self.startTimer()
         self.startInitializingBlueStackSDK()
     }
     
     func onConsentManagerRequestsToPresentPrivacyPolicy(consentManager: CMPManager, url: String) {}
+}
+
+extension SplashViewController: AppOpenAdManagerDelegate {
+    func appOpenAdDidComplete(_ appOpenAdManager: AppOpenAdManager) {
+        print("appOpenAdManagerAdDidComplete")
+        DispatchQueue.main.async {
+            AppOpenAdManager.shared.appOpenAdManagerDelegate = nil
+            self.onInitializationComplete?()
+        }
+    }
 }
 
 extension SplashViewController: StoryboardInstantiable {}

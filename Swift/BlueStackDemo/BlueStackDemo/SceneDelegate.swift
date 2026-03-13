@@ -41,6 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        guard appCoordinator.isSplashCompleted else { return }
+        AppOpenAdManager.shared.showAppOpenAdIfAvailable()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {

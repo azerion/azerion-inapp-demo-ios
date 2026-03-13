@@ -6,6 +6,7 @@ class AppCoordinator: Coordinator {
     
     weak var finishDelegate: (any CoordinatorFinishDelegate)?
     
+    private(set) var isSplashCompleted = false
     private weak var navigationController: UINavigationController?
     private var coordinatorDependency: AppCoordinatorDependency
     
@@ -31,6 +32,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showMainFlow() {
+        isSplashCompleted = true
         self.childCoordinator = coordinatorDependency.makeMenuCoordinator()
         guard let viewController = self.childCoordinator?.start() else { return }
         self.navigationController?.setViewControllers([viewController], animated: true)
